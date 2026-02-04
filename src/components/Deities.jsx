@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Deities = () => {
   const [selectedDeity, setSelectedDeity] = useState(null);
   const [showBlessingMessage, setShowBlessingMessage] = useState(false);
+  const fallbackImage = "/mandir-favicon.svg";
 
   // The Data (Easily expandable)
   const gods = [
@@ -63,6 +64,10 @@ const Deities = () => {
     setSelectedDeity(null);
   };
 
+  const handleImageError = (event) => {
+    event.currentTarget.src = fallbackImage;
+  };
+
   return (
     <>
       <section id="deities" className="section-padding">
@@ -80,6 +85,10 @@ const Deities = () => {
                   src={god.image}
                   alt={god.name}
                   loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                  crossOrigin="anonymous"
+                  onError={handleImageError}
                   className="deity-card-image"
                 />
               </div>
@@ -103,7 +112,16 @@ const Deities = () => {
             
             {/* Deity Image */}
             <div className="deity-image-container">
-              <img src={selectedDeity.image} alt={selectedDeity.name} className="deity-image" />
+              <img
+                src={selectedDeity.image}
+                alt={selectedDeity.name}
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
+                crossOrigin="anonymous"
+                onError={handleImageError}
+                className="deity-image"
+              />
             </div>
 
             <div className="modal-body">
