@@ -12,7 +12,7 @@ const Deities = () => {
       desc: "The Destroyer & Transformer",
       icon: "fa-om",
       color: "#f0faff",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Shiva_Mahakal_Temple%2C_Ujjain_%281%29.jpg/500px-Shiva_Mahakal_Temple%2C_Ujjain_%281%29.jpg",
+      image: "/lordshiva.jpg",
       fullDesc: "Lord Shiva, the cosmic dancer, represents destruction and transformation. He is the supreme consciousness that dissolves the universe to recreate it.",
       mantra: "ॐ नमः शिवाय",
       offerings: "Flowers, Milk, Fruits"
@@ -22,7 +22,7 @@ const Deities = () => {
       desc: "Maryada Purushottam",
       icon: "fa-hand-peace",
       color: "#fff5e6",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Ram_Darbar.jpg/500px-Ram_Darbar.jpg",
+      image: "/lordram.jpg",
       fullDesc: "Lord Rama, the ideal man and king, epitomizes righteousness, duty, and moral values. He is the seventh avatar of Lord Vishnu.",
       mantra: "ॐ राम रामाय नमः",
       offerings: "Sugarcane, Fruits, Sweets"
@@ -42,7 +42,7 @@ const Deities = () => {
       desc: "Remover of Obstacles",
       icon: "fa-leaf",
       color: "#f0fff0",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ganesha.jpg/500px-Ganesha.jpg",
+      image: "/lordganesha.jpg",
       fullDesc: "Lord Ganesha, the elephant-headed deity, is worshipped at the beginning of all endeavors. He removes obstacles and brings success.",
       mantra: "ॐ गं गणपतये नमः",
       offerings: "Modak, Coconut, Flowers"
