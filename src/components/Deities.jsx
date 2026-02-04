@@ -76,7 +76,12 @@ const Deities = () => {
           {gods.map((god, index) => (
             <div key={index} className="deity-card">
               <div className="card-img" style={{ backgroundColor: god.color }}>
-                <i className={`fas ${god.icon} fa-3x`}></i>
+                <img
+                  src={god.image}
+                  alt={god.name}
+                  loading="lazy"
+                  className="deity-card-image"
+                />
               </div>
               <div className="card-info">
                 <h3>{god.name}</h3>
