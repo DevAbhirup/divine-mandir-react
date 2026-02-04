@@ -32,7 +32,7 @@ const Deities = () => {
       desc: "The Divine Mother",
       icon: "fa-sun",
       color: "#fff0f0",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Durga_Puja_Kolkata_2012_Navami.jpg/500px-Durga_Puja_Kolkata_2012_Navami.jpg",
+      image: "/maadurga.jpg",
       fullDesc: "Maa Durga, the supreme goddess, embodies power, protection, and feminine energy. She destroys negativity and evil.",
       mantra: "ॐ देवी दुर्गा नमः",
       offerings: "Flowers, Red Vermilion, Coconut"
