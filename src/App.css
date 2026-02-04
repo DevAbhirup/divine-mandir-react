@@ -1,0 +1,669 @@
+/* --- NAVBAR --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  padding: 1.2rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar .logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--saffron);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: var(--text-dark);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--saffron);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--saffron);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 400px;
+  }
+
+  .nav-links a {
+    padding: 1rem 5%;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, rgba(255,153,51,0.85) 0%, rgba(139,0,0,0.85) 100%),
+              url('https://images.unsplash.com/photo-1586003075463-fd03e8f5c628?q=80&w=2070') center/cover;
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(212,175,55,0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sanskrit-shloka {
+  font-size: 2.5rem;
+  color: var(--gold);
+  letter-spacing: 8px;
+  display: block;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.4);
+  margin: 1rem 0;
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 2.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  font-weight: 300;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold) 0%, #e8c547 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(212,175,55,0.6);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--saffron);
+  border: 2px solid white;
+  box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+}
+
+.btn-secondary:hover {
+  background: var(--saffron);
+  color: white;
+  transform: translateY(-4px);
+}
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--deep-red);
+  z-index: 10;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(139, 0, 0, 0.1);
+}
+
+.modal-close:hover {
+  background: rgba(139, 0, 0, 0.2);
+  transform: rotate(90deg);
+}
+
+.modal-body {
+  padding: 2.5rem;
+}
+
+.modal-content h2 {
+  color: var(--deep-red);
+  margin: 0 0 1.5rem 0;
+  font-size: 2rem;
+}
+
+.modal-description {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.modal-timings {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.modal-timings h4 {
+  margin: 0 0 1rem 0;
+  color: var(--deep-red);
+}
+
+.modal-timings ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-timings li {
+  padding: 0.5rem 0;
+  color: #333;
+}
+
+/* --- SEVA OPTIONS --- */
+.seva-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.seva-card {
+  background: linear-gradient(135deg, rgba(255,153,51,0.1) 0%, rgba(212,175,55,0.1) 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.seva-card:hover {
+  border-color: var(--saffron);
+  transform: translateY(-5px);
+}
+
+.seva-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--deep-red);
+  font-size: 1rem;
+}
+
+.seva-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.seva-card .btn {
+  width: 100%;
+}
+
+/* --- DEITY MODAL --- */
+.deity-modal {
+  max-width: 500px;
+}
+
+.deity-image-container {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.deity-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.deity-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.1));
+  pointer-events: none;
+}
+
+.deity-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.detail-section {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.detail-section h4 {
+  margin: 0 0 0.8rem 0;
+  color: var(--deep-red);
+  font-size: 0.95rem;
+}
+
+.mantra-text {
+  font-size: 1.1rem;
+  color: var(--saffron);
+  font-family: 'Cinzel', serif;
+  margin: 0;
+}
+
+.detail-section p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.modal-actions .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* --- BLESSING NOTIFICATION --- */
+.blessing-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3000;
+  animation: popupAnimation 3s ease-in-out forwards;
+}
+
+@keyframes popupAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+.blessing-content {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  border: 3px solid var(--saffron);
+  max-width: 400px;
+}
+
+.blessing-content i {
+  font-size: 3rem;
+  color: var(--saffron);
+  display: block;
+  margin-bottom: 1rem;
+  animation: floatAnimation 1.5s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.blessing-content h3 {
+  font-size: 1.8rem;
+  color: var(--deep-red);
+  margin: 1rem 0 0.5rem 0;
+  font-family: 'Cinzel', serif;
+}
+
+.blessing-content p {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.live-stream-placeholder {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 3rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.live-stream-placeholder i {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* --- SECTION STYLING --- */
+.section-padding {
+  padding: 100px 5%;
+  background: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--deep-red);
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--saffron), var(--gold));
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+/* --- DEITY CARDS --- */
+.deity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.deity-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--soft-shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color);
+}
+
+.deity-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--medium-shadow);
+  border-color: var(--saffron);
+}
+
+.card-img {
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.deity-card:hover .card-img {
+  filter: brightness(1.1);
+}
+
+.deity-card i {
+  font-size: 3.5rem;
+  color: var(--saffron);
+}
+
+.card-info {
+  padding: 2rem;
+  text-align: center;
+}
+
+.deity-card h3 {
+  font-size: 1.5rem;
+  color: var(--deep-red);
+  margin-bottom: 0.5rem;
+}
+
+.deity-card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--saffron);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.btn-text:hover {
+  color: var(--deep-red);
+  transform: translateX(5px);
+}
+
+/* --- FOOTER --- */
+footer {
+  background: linear-gradient(135deg, var(--navy) 0%, #0f1929 100%);
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 4px solid var(--saffron);
+  margin-top: 4rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* --- SCROLLBAR STYLING --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--saffron);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--deep-red);
+}
