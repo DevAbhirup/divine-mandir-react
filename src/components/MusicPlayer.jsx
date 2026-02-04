@@ -17,8 +17,6 @@ const MusicPlayer = () => {
     if (isPlaying) {
       audioRef.current.pause();
     } else {
-      // In a real app, you would set the actual audio source here
-      // audioRef.current.src = audioSources[currentTrack];
       audioRef.current.play().catch(() => {
         alert("Audio file not available. This is a demo feature.");
       });

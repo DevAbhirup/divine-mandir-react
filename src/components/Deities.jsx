@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 const Deities = () => {
   const [selectedDeity, setSelectedDeity] = useState(null);
   const [showBlessingMessage, setShowBlessingMessage] = useState(false);
-  const fallbackImage = "/mandir-favicon.svg";
+  const fallbackImage = '/mandir-favicon.svg';
 
-  // The Data (Easily expandable)
   const gods = [
     { 
       name: "Lord Shiva", 
@@ -77,7 +76,6 @@ const Deities = () => {
         </div>
         
         <div className="deity-grid container">
-          {/* React Magic: Mapping through data */}
           {gods.map((god, index) => (
             <div key={index} className="deity-card">
               <div className="card-img" style={{ backgroundColor: god.color }}>
@@ -96,7 +94,7 @@ const Deities = () => {
                 <h3>{god.name}</h3>
                 <p>{god.desc}</p>
                 <button className="btn-text" onClick={() => handleVisitTemple(god)}>
-                  Visit Temple &rarr;
+                  Visit Temple →
                 </button>
               </div>
             </div>
@@ -104,13 +102,11 @@ const Deities = () => {
         </div>
       </section>
 
-      {/* Deity Details Modal */}
       {selectedDeity && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content deity-modal" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={closeModal}>×</button>
             
-            {/* Deity Image */}
             <div className="deity-image-container">
               <img
                 src={selectedDeity.image}
@@ -141,10 +137,10 @@ const Deities = () => {
               </div>
 
               <div className="modal-actions">
-                <button className="btn btn-primary" onClick={handlePray} style={{flex: 1}}>
+                <button className="btn btn-primary" onClick={handlePray}>
                   <i className="fas fa-heart"></i> Pray
                 </button>
-                <button className="btn btn-secondary" style={{flex: 1}}>
+                <button className="btn btn-secondary">
                   <i className="fas fa-gift"></i> Offer
                 </button>
               </div>
@@ -153,7 +149,6 @@ const Deities = () => {
         </div>
       )}
 
-      {/* Blessing Message */}
       {showBlessingMessage && (
         <div className="blessing-notification">
           <div className="blessing-content">

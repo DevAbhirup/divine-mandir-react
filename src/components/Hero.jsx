@@ -25,15 +25,14 @@ const Hero = () => {
         <div className="hero-content">
           <span className="sanskrit-shloka">|| ॐ नमः शिवाय ||</span>
           <h1>Connecting Devotees to the Divine</h1>
-          <p>Experience the sanctity of Sanatan Dharma, Anytime, Anywhere.</p>
+          <p>Step into a sacred digital mandir crafted for darshan, prayer, and peace.</p>
           <div className="cta-buttons">
-              <button onClick={handleDarshanClick} className="btn btn-primary">Online Darshan</button>
-              <button onClick={handleSevaClick} className="btn btn-secondary">Offer Seva</button>
+            <button onClick={handleDarshanClick} className="btn btn-primary">Online Darshan</button>
+            <button onClick={handleSevaClick} className="btn btn-secondary">Offer Seva</button>
           </div>
         </div>
       </header>
 
-      {/* Darshan Modal */}
       {showDarshanModal && (
         <div className="modal-overlay" onClick={() => closeModal(setShowDarshanModal)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -63,7 +62,6 @@ const Hero = () => {
         </div>
       )}
 
-      {/* Seva Modal */}
       {showSevaModal && (
         <div className="modal-overlay" onClick={() => closeModal(setShowSevaModal)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>

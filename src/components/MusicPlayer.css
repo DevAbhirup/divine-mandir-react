@@ -1,27 +1,30 @@
 .music-player-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 4rem 5%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(232, 143, 42, 0.2) 0, transparent 45%),
+    linear-gradient(135deg, #4c0c0a 0%, #1f120c 100%);
+  padding: 5rem 5%;
   text-align: center;
-  color: white;
+  color: #f7efe4;
 }
 
 .music-container {
-  max-width: 500px;
+  max-width: 560px;
   margin: 0 auto;
 }
 
 .music-container h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
-  color: white;
+  color: #f7efe4;
 }
 
 .player-display {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 15px;
   padding: 1.5rem;
   margin-bottom: 2rem;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(215, 176, 74, 0.2);
 }
 
 .track-info h4 {
@@ -45,8 +48,8 @@
 }
 
 .music-btn {
-  background: white;
-  color: #667eea;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--saffron) 100%);
+  color: #1d1209;
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -54,7 +57,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
@@ -70,9 +73,9 @@
 }
 
 .control-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid white;
-  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(215, 176, 74, 0.6);
+  color: #f7efe4;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -94,17 +97,18 @@
 }
 
 .playlist {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 15px;
   padding: 1.5rem;
   margin: 2rem 0;
   backdrop-filter: blur(10px);
   text-align: left;
+  border: 1px solid rgba(215, 176, 74, 0.2);
 }
 
 .playlist h5 {
   margin: 0 0 1rem 0;
-  color: white;
+  color: #f7efe4;
   font-size: 1rem;
 }
 
