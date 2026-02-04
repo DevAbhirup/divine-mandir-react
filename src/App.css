@@ -173,6 +173,7 @@
   font-weight: 700;
   text-shadow: 2px 2px 20px rgba(0,0,0,0.45);
   margin: 1rem 0;
+  color: var(--gold);
 }
 
 .hero-content p {
